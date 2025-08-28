@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 80;
+const port = 3000;
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Hello, World!");
 });
 
-app.get("/repos/:username", async (req, res) => {
+app.get("/api/repos/:username", async (req, res) => {
   const username = req.params.username;
   if (!username) {
     return res.status(400).json({ error: "Username is required" });
