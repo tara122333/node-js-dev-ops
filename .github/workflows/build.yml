@@ -16,6 +16,6 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY_UAT }}
         port: ${{ secrets.EC2_PORT }}
-        timeout: 2m
+        timeout: 3m
         script: |
           mkdir tara
