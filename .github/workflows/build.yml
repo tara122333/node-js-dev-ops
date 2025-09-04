@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_HOST_UAT }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.EC2_PRIVATE_KEY_UAT }}
+        port: ${{ secrets.EC2_PORT }}
+        timeout: 10m
+        script: |
+          mkdir tara
