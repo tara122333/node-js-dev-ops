@@ -18,4 +18,10 @@ jobs:
         port: ${{ secrets.EC2_PORT }}
         timeout: 3m
         script: |
-          mkdir tara
+          cd tara
+          rm -rf node-js-dev-ops
+          git clone https://github.com/tara122333/node-js-dev-ops.git
+          cd node-js-dev-ops
+          npm install
+          npm run start
+
