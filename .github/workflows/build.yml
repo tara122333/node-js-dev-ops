@@ -27,4 +27,6 @@ jobs:
           cd node-js-dev-ops
           npm install
           npm run start
+          pm2 restart node-js-dev-ops
+
 
